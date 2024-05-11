@@ -1,1 +1,2 @@
-alert("Hello Nickolas");
+let myName = 'Nickolas';
+document.write(myName);
