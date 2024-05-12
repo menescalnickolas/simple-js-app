@@ -2,18 +2,18 @@ let pokemonList = [
     {
         name: "Ponyta",
         height: 1,
-        types: [fire]
+        types: ["Fire"]
     },
 
     {
         name: "Rapidash",
         height: 1.7,
-        types: [fire]
+        types: ["Fire"]
     },
 
     {
         name: "Butterfree",
         height: 1.1,
-        types: [bug, flying]
+        types: ["Bug", "Flying"]
     }
 ];
