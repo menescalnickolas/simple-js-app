@@ -1,3 +1,4 @@
+
 let pokemonList = [
     {
         name: "Ponyta",
@@ -25,4 +26,4 @@ for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList.height > 1.5) {
         document.write(pokemonList[i].height + "- Wow! That's big.")
     }
-];
+];}
