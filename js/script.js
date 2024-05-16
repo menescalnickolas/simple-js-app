@@ -20,24 +20,16 @@ let pokemonRepository = (function () {
         }
     ]
 
-    function getAll() {
-        return pokemonList;
-    }
-
-    function add(pokemon) {
-        pokemonList.push(pokemon);
-    }
-
     return {
-        getAll: getAll,
-        add: add
-    }
+        add: function add(pokemon) {
+            pokemonList.push(pokemon);
+        },
+        getAll: function getAll() {
+            return pokemonList;
+        },
+    };
 })();
 
-function myLoopFunction(pokemonList) {
-    document.write(`<p class="pokemonList"> Name: ${pokemonList.name} (Height: ${pokemonList.height}) (Type: ${pokemonList.types})</p><br>`);
-}
-
-pokemonRepository.getAll(myLoopFunction);
-
-
+pokemonRepository.getAll().forEach(function (pokemon) {
+    document.write("<p class='pokemonList'>" + pokemon.name + "-" + " " + "Height: " + pokemon.height + " " + "-" + " " + "Type: " + pokemon.types + "<br></p>");
+});
