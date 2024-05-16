@@ -35,23 +35,21 @@ h1 {
   }
 
    /* Pokemon List Styles */
-
    .pokemonList {
     margin: 0 auto;
     margin-top: 35px;
     width: 300px;
-    height: 100px;
+    height: 120px;
     border: 3px solid #3c5aa6;
     border-radius: 10%;
     text-align: center;
-    padding: 25px;
+    padding: 20px;
+    line-height: 25px;
 
-    
-
+    /* Grid Styling */
     display: grid;
     grid-template-columns: 2fr;
     grid-template-rows: 1fr;
-
    }
 
 /* Media Query for Phones */
