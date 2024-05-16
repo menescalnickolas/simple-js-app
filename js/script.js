@@ -31,5 +31,5 @@ let pokemonRepository = (function () {
 })();
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-    document.write("<p class='pokemonList'>" + pokemon.name  + "<br> Height: " + pokemon.height + "<br> Type: " + pokemon.types + "<br></p>");
+    document.write("<div class='pokemonList'>" + "<h2 class='pokemonName'>" + pokemon.name + "</h2>" + "<br> <h3 class='pokemonHeight'> Height: " + pokemon.height + "</h3><br> Type: " + pokemon.types + "<br></div>");
 });

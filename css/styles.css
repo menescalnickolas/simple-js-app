@@ -12,6 +12,7 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #3c5aa6;
 }
 
   /* Navigation Bar Styles */
@@ -39,17 +40,27 @@ h1 {
     margin: 0 auto;
     margin-top: 35px;
     width: 300px;
-    height: 120px;
-    border: 3px solid #3c5aa6;
+    height: 125px;
+    border: 1px solid #ffcb05;
     border-radius: 10%;
     text-align: center;
-    padding: 20px;
-    line-height: 25px;
+    line-height: 15px;
 
     /* Grid Styling */
     display: grid;
     grid-template-columns: 2fr;
     grid-template-rows: 1fr;
+   }
+
+
+   .pokemonName {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: -25px;
+   }
+
+   .pokemonHeight {
+    font-size: 15px;
    }
 
 /* Media Query for Phones */
