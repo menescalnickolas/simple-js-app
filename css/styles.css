@@ -35,32 +35,33 @@ h1 {
     padding: 14px;
   }
 
-   /* Pokemon List Styles */
-   .pokemonList {
-    margin: 0 auto;
-    margin-top: 35px;
-    width: 300px;
-    height: 125px;
-    border: 1px solid #ffcb05;
-    border-radius: 10%;
-    text-align: center;
-    line-height: 15px;
 
-    /* Grid Styling */
-    display: grid;
-    grid-template-columns: 2fr;
-    grid-template-rows: 1fr;
-   }
+  /* Button List Style */
+.buttonList {
+  text-align: center;
+  padding: 25px;
+}
 
+.buttonList li {
+  padding: 10px;
+}
 
-   .pokemonName {
-    font-size: 20px;
-    padding-top: 10px;
-    padding-bottom: -25px;
-   }
+.pokemonButtonList {
+  list-style-type: none;
+}
 
-   .pokemonHeight {
-    font-size: 15px;
-   }
+.buttonStyle {
+  width: 100px;
+  height: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  border-radius: 10%;
+  background-color: #ffcb05;
+}
+
+.buttonStyle:active {
+  background-color: #d1a600;
+  font-weight: normal;
+}
 
 /* Media Query for Phones */
