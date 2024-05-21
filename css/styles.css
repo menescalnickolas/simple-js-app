@@ -44,10 +44,13 @@ h1 {
 
 .buttonList li {
   padding: 10px;
+  padding: 10px; 
 }
 
 .pokemonButtonList {
   list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .buttonStyle {
@@ -57,6 +60,7 @@ h1 {
   font-weight: bolder;
   border-radius: 10%;
   background-color: #ffcb05;
+  
 }
 
 .buttonStyle:active {
