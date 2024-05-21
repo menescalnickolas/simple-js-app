@@ -61,7 +61,7 @@ let pokemonRepository = (function () {
     }
 
     return {
-        add: add,
+        add: add, 
         getAll: getAll,
         addListItem: addListItem,
         loadList: loadList,
@@ -74,6 +74,7 @@ pokemonRepository.loadList().then(function () {
         pokemonRepository.addListItem(pokemon);
     });
 });
+
 
 
 
