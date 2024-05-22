@@ -35,7 +35,7 @@ let pokemonRepository = (function () {
 
             /*Height and Types Information*/
             let contentElement = document.createElement('p');
-            contentElement.innerText = 'Height: ' + pokemon.height + '<br>' + 'Types: ' + pokemon.types;
+            contentElement.innerText = 'Height: ' + pokemon.height + ' Types: ' + pokemon.types;
 
             /*Insert Image to Modal*/
             let imageElement = document.createElement('img');
