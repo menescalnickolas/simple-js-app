@@ -26,6 +26,7 @@ let pokemonRepository = (function () {
             /*Create Close Button*/
             let closeButtonElement = document.createElement('button');
             closeButtonElement.innerText = 'X';
+            closeButtonElement.classList.add('modal-close');
             closeButtonElement.addEventListener('click', hideModal);
 
             /*Title Element Inside Modal*/

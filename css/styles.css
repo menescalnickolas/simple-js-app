@@ -104,4 +104,10 @@ h1 {
   background: lightgray;
 }
 
+.image {
+  margin: 0 auto; 
+  width: 150px;
+  padding: 0;
+}
+
 /* Media Query for Phones */
