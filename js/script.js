@@ -20,7 +20,7 @@ let pokemonRepository = (function () {
             showModal.innerText = '';
 
             /*Create Modal Div for Content */
-            let modalDetails = document.querySelector('div');
+            let modalDetails = document.createElement ('div');
             modalDetails.classList.add('modal-whitebox');
 
             /*Create Close Button*/
@@ -35,7 +35,7 @@ let pokemonRepository = (function () {
 
             /*Height and Types Information*/
             let contentElement = document.createElement('p');
-            contentElement.innerText = 'Height: ' + pokemon.height + ' Types: ' + pokemon.types;
+            contentElement.innerText = 'Height: ' + pokemon.height +' Types: ' + pokemon.types;
 
             /*Insert Image to Modal*/
             let imageElement = document.createElement('img');
@@ -66,8 +66,6 @@ let pokemonRepository = (function () {
         let showModal = document.querySelector('#modalContainer');
         showModal.classList.remove('is-visible');
     }
-
-
 
     function addListItem(pokemon) {
         let pokemonButtonList = document.querySelector('.pokemonButtonList');
