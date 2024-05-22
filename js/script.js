@@ -33,9 +33,12 @@ let pokemonRepository = (function () {
             let pokemonTitle = document.createElement('h2');
             pokemonTitle.innerText = pokemon.name;
 
+            /* Capitalize First Letter of Pokemon Name */
+            pokemonTitle.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+
             /*Height and Types Information*/
             let contentElement = document.createElement('p');
-            contentElement.innerText = 'Height: ' + pokemon.height +' Types: ' + pokemon.types;
+            contentElement.innerText = `Height: ${pokemon.height} <br> Types: ${pokemon.types}`;
 
             /*Insert Image to Modal*/
             let imageElement = document.createElement('img');
@@ -72,6 +75,7 @@ let pokemonRepository = (function () {
         let listItem = document.createElement('li');
         let button = document.createElement('button');
         button.innerText = pokemon.name;
+        button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         button.classList.add('buttonStyle');
         listItem.appendChild(button);
         pokemonButtonList.appendChild(listItem);
