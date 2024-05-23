@@ -38,7 +38,7 @@ let pokemonRepository = (function () {
 
             /*Height and Types Information*/
             let contentElement = document.createElement('p');
-            contentElement.innerText = `Height: ${pokemon.height} <br> Types: ${pokemon.types}`;
+            contentElement.innerText = 'Height: ' + pokemon.height + ' Types: ' + printPokemonTypes();
 
             /*Insert Image to Modal*/
             let imageElement = document.createElement('img');
@@ -62,6 +62,13 @@ let pokemonRepository = (function () {
             });
 
         });
+    }
+
+    /* Show Pokemon Types For Loop */
+    function printPokemonTypes() {
+        for (let i = 0; i < pokemonList.types; i++) {
+            document.write(pokemonList[i].types);
+        }
     }
 
     /*Hide Modal Function*/
