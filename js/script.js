@@ -20,7 +20,7 @@ let pokemonRepository = (function () {
             showModal.innerText = '';
 
             /*Create Modal Div for Content */
-            let modalDetails = document.createElement ('div');
+            let modalDetails = document.createElement('div');
             modalDetails.classList.add('modal-whitebox');
 
             /*Create Close Button*/
@@ -31,14 +31,20 @@ let pokemonRepository = (function () {
 
             /*Title Element Inside Modal*/
             let pokemonTitle = document.createElement('h2');
+            pokemonTitle.classList.add('pokemonTitle');
             pokemonTitle.innerText = pokemon.name;
 
             /* Capitalize First Letter of Pokemon Name */
             pokemonTitle.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
-            /*Height and Types Information*/
-            let contentElement = document.createElement('p');
-            contentElement.innerText = 'Height: ' + pokemon.height + ' Types: ' + printPokemonTypes() + ' Weight: ' + pokemon.weight;
+            /*Pokemon Information in Modal*/
+            let heightElement = document.createElement('p');
+            heightElement.innerText = 'Height: ' + pokemon.height;
+
+            let weightElement = document.createElement('p');
+            weightElement.innerHTML = 'Weight: ' + pokemon.weight;
+
+    
 
             /*Insert Image to Modal*/
             let imageElement = document.createElement('img');
@@ -48,11 +54,19 @@ let pokemonRepository = (function () {
             modalDetails.appendChild(closeButtonElement);
             modalDetails.appendChild(pokemonTitle);
             modalDetails.appendChild(imageElement);
-            modalDetails.appendChild(contentElement);
+            modalDetails.appendChild(heightElement);
+            modalDetails.appendChild(weightElement);
+
+            for (let i = 0; i < pokemon.types.length; i++) {
+                let type = document.createElement('p');
+                type.classList.add('type');
+                type.innerHTML = 'Types: ' + pokemon.types[i].type.name;
+                modalDetails.appendChild(type);
+            }
+
             showModal.appendChild(modalDetails);
 
             showModal.classList.add('is-visible');
-            
 
             showModal.addEventListener('click', (e) => {
                 let target = e.target;
@@ -62,13 +76,6 @@ let pokemonRepository = (function () {
             });
 
         });
-    }
-
-    /* Show Pokemon Types For Loop */
-    function printPokemonTypes() {
-        for (let i = 0; i < pokemonList.types; i++) {
-            document.write(pokemonList[i].types);
-        }
     }
 
     /*Hide Modal Function*/
