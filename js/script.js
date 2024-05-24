@@ -44,8 +44,6 @@ let pokemonRepository = (function () {
             let weightElement = document.createElement('p');
             weightElement.innerHTML = 'Weight: ' + pokemon.weight;
 
-    
-
             /*Insert Image to Modal*/
             let imageElement = document.createElement('img');
             imageElement.classList.add('image');
