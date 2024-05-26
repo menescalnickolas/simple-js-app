@@ -14,16 +14,20 @@
 </head>
 
 <body>
-    <nav class="nav-bar">
-        <ul class="nav-list">
-            <li>
-                <h1>Pokédex</h1>
-            </li>
-        </ul>
-    </nav>
-    <div class="buttonList">
-        <ul class="pokemonButtonList list-group">
-        </ul>
+    <nav class="navbar">
+        <a class="navbar-brand">Pokédex</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn my-2 my-sm-0 navbar-btn" type="submit">Search</button>
+        </form>
+      </nav>
+
+    <div class="container">
+        <div class="row">
+           <ul class="pokemonButtonList list-group col-2">
+        </ul> 
+        </div>
+        
     </div>
 
     <!-- Button trigger modal -->
