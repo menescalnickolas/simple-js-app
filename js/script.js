@@ -54,12 +54,11 @@ let pokemonRepository = (function () {
         let listItem = document.createElement('li');
         let button = document.createElement('button');
         button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-        button.classList.add('btn');
-        button.classList.add('btn-primary');
+        button.classList.add('btn', 'btn-primary', 'btn-block');
         listItem.classList.add('list-group-item');
-        listItem.classList.add('col');
         listItem.appendChild(button);
         pokemonButtonList.appendChild(listItem);
+        
 
         button.addEventListener('click', function () {
             loadDetails(pokemon).then(function () {
