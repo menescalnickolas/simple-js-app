@@ -3,7 +3,6 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-
     function add(pokemon) {
         pokemonList.push(pokemon);
     }
@@ -15,75 +14,57 @@ let pokemonRepository = (function () {
     function showModal(pokemon) {
         let modalBody = $('.modal-body');
         let modalTitle = $('.modal-title');
-        let modalHeader = $('.modal-header');
 
         modalTitle.empty();
         modalBody.empty();
 
-        /*Name Element in Modal*/ 
-        let nameElement = $("<h1>" + pokemon.name + "</h1>")
+        /* Name Element in Modal */
+        let nameElement = $("<h1>" + pokemon.name + "</h1>");
 
-        /*Img Element in Modal*/
+        /* Img Element in Modal */
         let imageElementFront = $('<img class="modal-img" style="width:50%">');
-        imageElementFront.attr("src", pokemon.imageUrlFront);
-        let imageElementBack = $('<img class="modal-img" style="width:50%">');
-        imageElementBack.attr("src", pokemon.imageUrlBack);
-
-        /*Height Element in Modal*/
+        imageElementFront.attr("src", pokemon.imageUrl);
+        
+        /* Height Element in Modal */
         let heightElement = $("<p>" + "Height: " + pokemon.height + "</p>");
 
-        /*Weight Element in Modal*/
+        /* Weight Element in Modal */
         let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
 
-        /*Types Element in Modal*/
-        let typesElement = $("<p>" + "Types: " + pokemon.types + "</p>");
+        /* Types Element in Modal */
+        let types = pokemon.types.map(typeInfo => typeInfo.type.name).join(', ');
+        let typesElement = $("<p>" + "Types: " + types + "</p>");
 
-        /*Abilities Element in Modal*/
-        let abilitiesElement = $("<p>" + "Abilities: " + pokemon.abilities + "</p>");
+        /* Abilities Element in Modal */
+        let abilities = pokemon.abilities.map(abilityInfo => abilityInfo.ability.name).join(', ');
+        let abilitiesElement = $("<p>" + "Abilities: " + abilities + "</p>");
 
         modalTitle.append(nameElement);
         modalBody.append(imageElementFront);
-        modalBody.append(imageElementBack);
         modalBody.append(heightElement);
         modalBody.append(weightElement);
         modalBody.append(typesElement);
         modalBody.append(abilitiesElement);
-        
+
+        $('#exampleModal').modal('show'); // Ensure modal is shown
     }
-
-    /*
-    function showDetails(pokemon) {
-        loadDetails(pokemon).then(
-
-    
-
-            showModal.appendChild(modalDetails);
-
-            showModal.classList.add('is-visible');
-
-            showModal.addEventListener('click', (e) => {
-                let target = e.target;
-                if (target === showModal) {
-                    hideModal();
-                }
-            });
-
-        });
-    } */
 
     function addListItem(pokemon) {
         let pokemonButtonList = document.querySelector('.pokemonButtonList');
         let listItem = document.createElement('li');
         let button = document.createElement('button');
-        button.innerText = pokemon.name;
         button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         button.classList.add('btn');
         button.classList.add('btn-primary');
         listItem.classList.add('list-group-item');
+        listItem.classList.add('col');
         listItem.appendChild(button);
         pokemonButtonList.appendChild(listItem);
+
         button.addEventListener('click', function () {
-            showDetails(pokemon);
+            loadDetails(pokemon).then(function () {
+                showModal(pokemon);
+            });
         });
     }
 
@@ -100,7 +81,7 @@ let pokemonRepository = (function () {
             });
         }).catch(function (e) {
             console.error(e);
-        })
+        });
     }
 
     function loadDetails(item) {
@@ -112,6 +93,7 @@ let pokemonRepository = (function () {
             item.height = details.height;
             item.types = details.types;
             item.weight = details.weight;
+            item.abilities = details.abilities;
         }).catch(function (e) {
             console.error(e);
         });
@@ -131,6 +113,4 @@ pokemonRepository.loadList().then(function () {
         pokemonRepository.addListItem(pokemon);
     });
 });
-
-
 
