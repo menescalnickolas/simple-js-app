@@ -88,7 +88,9 @@ let pokemonRepository = (function () {
         let button = document.createElement('button');
         button.innerText = pokemon.name;
         button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-        button.classList.add('buttonStyle');
+        button.classList.add('btn');
+        button.classList.add('btn-primary');
+        listItem.classList.add('list-group-item');
         listItem.appendChild(button);
         pokemonButtonList.appendChild(listItem);
         button.addEventListener('click', function () {
