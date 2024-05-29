@@ -1,0 +1,15 @@
+- How well was the AI able to help you troubleshoot errors in your code?
+
+AI helped me a lot with troubleshooting! I was actually really impressed by how well it was able to explain me the issues and the changes recommended. 
+
+
+
+- Did you encounter any pain points with this approach to troubleshooting, and how did you work around them?
+
+I found the AI to be a repetitive with its answers if the sugested code did not work! I also noticed it didn't pinpoint ALL of the changes it made, meaning that if I only followed the changes it pinpointed and not looked at the full updated code it gave me, I would have missed come changes and would have had to troubleshoot again. 
+
+
+
+- What risks do you foresee with using AI to assist with this type of task? Consider aspects such as overreliance, hallucination, privacy, and bias in your answer.
+
+I can see how it's easy to jump into AI as soon as you can't figure something out. I also understand that the AI might not always give you the best solution or it might misunderstand your prompt. 
