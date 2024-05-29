@@ -51,12 +51,12 @@ let pokemonRepository = (function () {
 
     function addListItem(pokemon) {
         let pokemonButtonList = document.querySelector('.pokemonButtonList ul');
-        let listItem = document.createElement('li');
+        let listItem = document.createElement('div');
         let button = document.createElement('button');
 
         button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         button.classList.add('btn', 'btn-primary', 'btn-block');
-        listItem.classList.add('list-group-item', 'col');
+        listItem.classList.add('list-group-item');
         listItem.appendChild(button);
         pokemonButtonList.appendChild(listItem);
         
