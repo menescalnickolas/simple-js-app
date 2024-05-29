@@ -50,12 +50,13 @@ let pokemonRepository = (function () {
     }
 
     function addListItem(pokemon) {
-        let pokemonButtonList = document.querySelector('.pokemonButtonList');
+        let pokemonButtonList = document.querySelector('.pokemonButtonList ul');
         let listItem = document.createElement('li');
         let button = document.createElement('button');
+
         button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         button.classList.add('btn', 'btn-primary', 'btn-block');
-        listItem.classList.add('list-group-item');
+        listItem.classList.add('list-group-item', 'col');
         listItem.appendChild(button);
         pokemonButtonList.appendChild(listItem);
         
@@ -98,14 +99,31 @@ let pokemonRepository = (function () {
         });
     }
 
+    function filterPokemon(query) {
+        let filteredList = pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(query.toLowerCase()));
+        let pokemonButtonList = document.querySelector('.pokemonButtonList ul');
+        pokemonButtonList.innerHTML = ''; // Clear the existing list
+        filteredList.forEach(function (pokemon) {
+            addListItem(pokemon);
+        });
+    }
+
+
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
+        filterPokemon: filterPokemon
     };
 })();
+
+document.getElementById('search-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    let query = document.getElementById('search-input').value;
+    pokemonRepository.filterPokemon(query);
+});
 
 pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
