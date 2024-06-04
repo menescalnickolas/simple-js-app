@@ -13,14 +13,25 @@ body {
 
 
 /*Navigation Styles*/
+.navbar {
+  background-color: #ffcb05;
+    overflow: hidden;
+    position: fixed; /* Fix the position of the navigation bar */
+    top: 0; /* Position it at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1000;  /* Make sure it stays above other content */
+    
+}
+
 .navbar-brand {
     font-family: "Press Start 2P", sans-serif;
     font-size: 30px;
   }
 
   .navbar-btn {
-    background-color: #ffcb05;
+    background-color: #3c5aa6;
     outline-color: #ffcb05;
+    color: white;
   }
 
   .navbar-btn:active {
@@ -32,11 +43,32 @@ body {
   text-align: center;
 }
 
-  .list-group-item {
-    margin: 10px;
-  }
-
   .modal-title {
     color:#ffcb05;
   }
 
+    .pokemonButtonList {
+    margin-top: 80px;
+    }
+    
+    .pokemonButtonList .row {
+    padding: 0;
+    margin: 0;
+    }
+    
+    .pokemonButtonList .list-group-item {
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box; 
+    }
+    
+    .pokemonButtonList button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    }
+
+    .pokemonButtonList .col-4 {
+      padding: 0;
+  }

@@ -50,23 +50,27 @@ let pokemonRepository = (function () {
     }
 
     function addListItem(pokemon) {
-        let pokemonButtonList = document.querySelector('.pokemonButtonList ul');
-        let listItem = document.createElement('div');
+        let pokemonButtonList = document.querySelector('.pokemonButtonList .row');
+        let column = document.createElement('div'); // Use 'div' for the column
+        let listItem = document.createElement('div'); // Use 'div' for the list item
         let button = document.createElement('button');
-
+        
         button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         button.classList.add('btn', 'btn-primary', 'btn-block');
-        listItem.classList.add('list-group-item');
+        listItem.classList.add('list-group-item'); // Add Bootstrap column class
         listItem.appendChild(button);
-        pokemonButtonList.appendChild(listItem);
-        
 
+        column.classList.add('col-4'); // Add Bootstrap column class
+        column.appendChild(listItem);
+    
+        pokemonButtonList.appendChild(column);
+        
         button.addEventListener('click', function () {
             loadDetails(pokemon).then(function () {
                 showModal(pokemon);
             });
         });
-    }
+        }
 
     function loadList() {
         return fetch(apiUrl).then(function (response) {
